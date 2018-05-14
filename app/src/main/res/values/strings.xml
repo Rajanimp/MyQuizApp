@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">MyQuizApp</string>
+    <string name="submit_answer">Submit</string>
+    <string name="next">Next</string>
+    <string name="explore_india_quiz">Explore India Quiz</string>
+    <string name="right_or_wrong">Shows whether the answer is right or wrong</string>
+    <string name="hint">Your answer here</string>
+    <string name="correct">You have answered correctly!</string>
+    <string name="incorrect">You answer is incorrect! The correct answer is %1$s.</string>
+    <string name="incorrect_mcq">You answer is incorrect! The correct answers are %1$s and %2$s.</string>
+    <string name="question_number_display">Question %1$d/10</string>
+    <string name="initial_display">0</string>
+    <string name="final_score">You have scored %1$d out of 10. Congratulations!</string>
+
+    <string-array name="questions">
+        <item>Which two states in India have Chandigarh as their capital?; mcq</item>
+        <item>How many nations border India?; scq</item>
+        <item>What kind of saree comes from Madhya Pradesh?; scq</item>
+        <item>The river Ganga flows through which of the following cities -; mcq</item>
+        <item>The approximate area of India in square kilometers is -; scq</item>
+        <item>Which state or union territory has French as an official language - ; wrt</item>
+        <item>On which river is the Hirakund dam built?; scq </item>
+        <item>On which spacecraft did Rakesh Sharma make his historic trip to space?; wrt</item>
+        <item>In which of the following two sports did India bag gold in the 2018 Commonwealth games?; mcq</item>
+        <item>Sanskrit is the official language of which state in India?; wrt</item>
+    </string-array>
+    <string-array name="answers">
+        <item>Bihar; Haryana; Punjab</item>
+        <item>7; 14; 9</item>
+        <item>Batik; Chanderi; Sambalpuri</item>
+        <item>Varanasi; New Delhi; Haridwar</item>
+        <item>30,00,000; 40,00,000; 20,00,000</item>
+        <item>Pondicherry</item>
+        <item>Mahanadi; Godavari; Cauvery</item>
+        <item>Soyuz-T</item>
+        <item>Hockey; Badminton; Weightlifting</item>
+        <item>Uttarakhand</item>
+    </string-array>
+</resources>
