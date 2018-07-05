@@ -29,34 +29,148 @@
             android:layout_gravity="start"
             android:layout_margin="@dimen/margin_x_large"
             android:text="@string/question_number_display"
-            android:textSize="24sp" />
+            android:textSize="@dimen/text_large"
+            />
 
-        <!--<TextView
-            android:id="@+id/tv_timer"
+        <Chronometer
+            android:id="@+id/chrono_timer"
             style="@style/MyTextViewStyle"
             android:layout_alignParentEnd="true"
             android:layout_below="@id/quiz_title"
             android:gravity="end"
-            android:layout_margin="@dimen/margin_large"
-            android:textSize="48sp" />-->
+            android:layout_margin="@dimen/margin_x_large"
+            android:textSize="@dimen/text_large" />
 
-        <TextView
-            android:id="@+id/tv_message"
-            style="@style/MyTextViewStyle"
-            android:minLines="3"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="@dimen/margin_x_large"
-            android:layout_marginEnd="@dimen/margin_x_large"
-            android:layout_marginBottom="@dimen/margin_medium"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:textSize="@dimen/text_large"
-            />
+        <RelativeLayout
+            android:id="@+id/question_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_question_number"
+            >
+            <RelativeLayout
+                android:id="@+id/rel_layout_radio"
+                style="@style/MyLayoutStyle"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/single_choice_question"
+                    style="@style/MyQuestionTextViewStyle"
+                    />
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/single_choice_question"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
+                    tools:targetApi="o">
+
+                    <RadioButton
+                        android:id="@+id/rb_option1"
+                        style="@style/MyRadioButtonStyle"
+                        app:buttonTint="@android:color/white"
+                        tools:ignore="MissingPrefix" />
+
+                    <RadioButton
+                        android:id="@+id/rb_option2"
+                        style="@style/MyRadioButtonStyle"
+                        app:buttonTint="@android:color/white"
+                        tools:ignore="MissingPrefix" />
+
+                    <RadioButton
+                        android:id="@+id/rb_option3"
+                        style="@style/MyRadioButtonStyle"
+                        app:buttonTint="@android:color/white"
+                        tools:ignore="MissingPrefix" />
+                </RadioGroup>
+
+                <ImageView
+                    android:id="@+id/img_radio"
+                    style="@style/MyImageViewStyle"
+                    android:contentDescription="@string/right_or_wrong" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_layout_checkbox"
+                style="@style/MyLayoutStyle"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/multiple_choice_question"
+                    style="@style/MyQuestionTextViewStyle"
+                    />
+
+                <CheckBox
+                    android:id="@+id/cb_option1"
+                    style="@style/MyCheckBoxStyle"
+                    android:layout_below="@id/multiple_choice_question"
+                    />
+
+                <CheckBox
+                    android:id="@+id/cb_option2"
+                    style="@style/MyCheckBoxStyle"
+                    android:layout_below="@id/cb_option1"
+                    />
+
+                <CheckBox
+                    android:id="@+id/cb_option3"
+                    style="@style/MyCheckBoxStyle"
+                    android:layout_below="@id/cb_option2"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_checkbox"
+                    style="@style/MyImageViewStyle"
+                    android:contentDescription="@string/right_or_wrong"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_layout_etxt"
+                style="@style/MyLayoutStyle"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/written_answer_question"
+                    style="@style/MyQuestionTextViewStyle"
+                    />
+
+                <EditText
+                    android:id="@+id/etxt_written_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/written_answer_question"
+                    android:layout_marginTop="@dimen/margin_x_large"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:hint="@string/hint"
+                    android:inputType="text"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textColorHint="@color/colorPrimary"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_etxt"
+                    style="@style/MyImageViewStyle"
+                    android:contentDescription="@string/right_or_wrong"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rel_layout_final"
+                style="@style/MyLayoutStyle"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_final_score_text"
+                    style="@style/MyQuestionTextViewStyle"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
 
         <Button
             android:id="@+id/btn_submit_answer"
             style="@style/MyButtonStyle"
-            android:layout_above="@id/tv_message"
+            android:layout_below="@id/question_container"
             android:layout_alignParentStart="true"
             android:layout_marginStart="@dimen/margin_x_large"
             android:text="@string/submit_answer"
@@ -65,120 +179,33 @@
         <Button
             android:id="@+id/btn_next_question"
             style="@style/MyButtonStyle"
-            android:layout_above="@id/tv_message"
+            android:layout_below="@id/question_container"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/margin_x_large"
             android:text="@string/next"
             />
 
-        <RelativeLayout
-            android:id="@+id/rel_layout_radio"
-            style="@style/MyLayoutStyle"
-            android:layout_below="@id/tv_question_number"
-            android:visibility="gone">
+        <Button
+            android:id="@+id/btn_exit"
+            style="@style/MyButtonStyle"
+            android:layout_below="@id/question_container"
+            android:layout_centerHorizontal="true"
+            android:text="@string/exit"
+            android:visibility="gone"
+            />
 
-            <TextView
-                android:id="@+id/single_choice_question"
-                style="@style/MyQuestionTextViewStyle"
-                />
-
-            <RadioGroup
-                android:id="@+id/radio_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/single_choice_question"
-                android:layout_marginHorizontal="@dimen/margin_medium"
-                tools:targetApi="o">
-
-                <RadioButton
-                    android:id="@+id/rb_option1"
-                    style="@style/MyRadioButtonStyle"
-                    app:buttonTint="@android:color/white"
-                    tools:ignore="MissingPrefix" />
-
-                <RadioButton
-                    android:id="@+id/rb_option2"
-                    style="@style/MyRadioButtonStyle"
-                    app:buttonTint="@android:color/white"
-                    tools:ignore="MissingPrefix" />
-
-                <RadioButton
-                    android:id="@+id/rb_option3"
-                    style="@style/MyRadioButtonStyle"
-                    app:buttonTint="@android:color/white"
-                    tools:ignore="MissingPrefix" />
-            </RadioGroup>
-
-            <ImageView
-                android:id="@+id/img_radio"
-                style="@style/MyImageViewStyle"
-                />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rel_layout_checkbox"
-            style="@style/MyLayoutStyle"
-            android:layout_below="@id/tv_question_number"
-            android:visibility="visible">
-
-            <TextView
-                android:id="@+id/multiple_choice_question"
-                style="@style/MyQuestionTextViewStyle"
-                />
-
-            <CheckBox
-                android:id="@+id/cb_option1"
-                style="@style/MyCheckBoxStyle"
-                android:layout_below="@id/multiple_choice_question"
-                />
-
-            <CheckBox
-                android:id="@+id/cb_option2"
-                style="@style/MyCheckBoxStyle"
-                android:layout_below="@id/cb_option1"
-                />
-
-            <CheckBox
-                android:id="@+id/cb_option3"
-                style="@style/MyCheckBoxStyle"
-                android:layout_below="@id/cb_option2"
-                />
-
-            <ImageView
-                android:id="@+id/img_checkbox"
-                style="@style/MyImageViewStyle"
-                />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rel_layout_etxt"
-            style="@style/MyLayoutStyle"
-            android:layout_below="@id/tv_question_number"
-            android:visibility="gone">
-
-            <TextView
-                android:id="@+id/written_answer_question"
-                style="@style/MyQuestionTextViewStyle"
-                />
-
-            <EditText
-                android:id="@+id/etxt_written_answer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/written_answer_question"
-                android:layout_marginTop="@dimen/margin_x_large"
-                android:layout_marginBottom="@dimen/margin_medium"
-                android:hint="@string/hint"
-                android:inputType="text"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textColorHint="@color/colorPrimary"
-                />
-
-            <ImageView
-                android:id="@+id/img_etxt"
-                style="@style/MyImageViewStyle"
-                />
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_message"
+            style="@style/MyTextViewStyle"
+            android:minLines="3"
+            android:layout_below="@id/btn_submit_answer"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/margin_x_large"
+            android:layout_marginEnd="@dimen/margin_x_large"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:textSize="@dimen/text_large"
+            />
     </RelativeLayout>
 </ScrollView>

@@ -2,6 +2,7 @@
     <string name="app_name">MyQuizApp</string>
     <string name="submit_answer">Submit</string>
     <string name="next">Next</string>
+    <string name="exit">Exit</string>
     <string name="explore_india_quiz">Explore India Quiz</string>
     <string name="right_or_wrong">Shows whether the answer is right or wrong</string>
     <string name="hint">Your answer here</string>
@@ -10,7 +11,8 @@
     <string name="incorrect_mcq">You answer is incorrect! The correct answers are %1$s and %2$s.</string>
     <string name="question_number_display">Question %1$d/10</string>
     <string name="initial_display">0</string>
-    <string name="final_score">You have scored %1$d out of 10. Congratulations!</string>
+    <string name="final_score_zero">Oops! You have answered %1$d questions correctly and your score is %2$d/10.</string>
+    <string name="single_choice_radio_button">Single Choice Radio Button</string>
 
     <string-array name="questions">
         <item>Which two states in India have Chandigarh as their capital?; mcq</item>
@@ -36,4 +38,10 @@
         <item>Hockey; Badminton; Weightlifting</item>
         <item>Uttarakhand</item>
     </string-array>
+
+    <plurals
+        name="final_score">
+        <item quantity="one">Better luck next time! Your have answered only %1$d question correctly and your score is %2$d/10.</item>
+        <item quantity="other">Congratulations! You have answered %1$d questions out of 10 correctly and your score is %2$d/10.</item>
+    </plurals>
 </resources>
