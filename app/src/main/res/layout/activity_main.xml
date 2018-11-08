@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_background"
     android:fillViewport="true"
     tools:context=".MainActivity">
 
@@ -16,37 +15,36 @@
             android:id="@+id/quiz_title"
             style="@style/MyTextViewStyle"
             android:layout_alignParentTop="true"
-            android:textSize="@dimen/text_x_large"
             android:gravity="center"
+            android:padding="@dimen/margin_medium"
             android:text="@string/explore_india_quiz"
-            />
+            android:textSize="@dimen/text_x_large" />
 
         <TextView
             android:id="@+id/tv_question_number"
             style="@style/MyTextViewStyle"
-            android:layout_alignParentStart="true"
             android:layout_below="@id/quiz_title"
+            android:layout_alignParentStart="true"
             android:layout_gravity="start"
             android:layout_margin="@dimen/margin_x_large"
             android:text="@string/question_number_display"
-            android:textSize="@dimen/text_large"
-            />
+            android:textSize="@dimen/text_large" />
 
         <Chronometer
             android:id="@+id/chrono_timer"
             style="@style/MyTextViewStyle"
-            android:layout_alignParentEnd="true"
             android:layout_below="@id/quiz_title"
-            android:gravity="end"
+            android:layout_alignParentEnd="true"
             android:layout_margin="@dimen/margin_x_large"
+            android:gravity="end"
             android:textSize="@dimen/text_large" />
 
         <RelativeLayout
             android:id="@+id/question_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_question_number"
-            >
+            android:layout_below="@id/tv_question_number">
+
             <RelativeLayout
                 android:id="@+id/rel_layout_radio"
                 style="@style/MyLayoutStyle"
@@ -54,34 +52,26 @@
 
                 <TextView
                     android:id="@+id/single_choice_question"
-                    style="@style/MyQuestionTextViewStyle"
-                    />
+                    style="@style/MyQuestionTextViewStyle" />
 
                 <RadioGroup
                     android:id="@+id/radio_group"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/single_choice_question"
-                    android:layout_marginHorizontal="@dimen/margin_medium"
-                    tools:targetApi="o">
+                    android:layout_below="@id/single_choice_question">
 
                     <RadioButton
                         android:id="@+id/rb_option1"
                         style="@style/MyRadioButtonStyle"
-                        app:buttonTint="@android:color/white"
-                        tools:ignore="MissingPrefix" />
+                        android:drawablePadding="@dimen/margin_intermediate" />
 
                     <RadioButton
                         android:id="@+id/rb_option2"
-                        style="@style/MyRadioButtonStyle"
-                        app:buttonTint="@android:color/white"
-                        tools:ignore="MissingPrefix" />
+                        style="@style/MyRadioButtonStyle" />
 
                     <RadioButton
                         android:id="@+id/rb_option3"
-                        style="@style/MyRadioButtonStyle"
-                        app:buttonTint="@android:color/white"
-                        tools:ignore="MissingPrefix" />
+                        style="@style/MyRadioButtonStyle" />
                 </RadioGroup>
 
                 <ImageView
@@ -97,32 +87,27 @@
 
                 <TextView
                     android:id="@+id/multiple_choice_question"
-                    style="@style/MyQuestionTextViewStyle"
-                    />
+                    style="@style/MyQuestionTextViewStyle" />
 
                 <CheckBox
                     android:id="@+id/cb_option1"
                     style="@style/MyCheckBoxStyle"
-                    android:layout_below="@id/multiple_choice_question"
-                    />
+                    android:layout_below="@id/multiple_choice_question" />
 
                 <CheckBox
                     android:id="@+id/cb_option2"
                     style="@style/MyCheckBoxStyle"
-                    android:layout_below="@id/cb_option1"
-                    />
+                    android:layout_below="@id/cb_option1" />
 
                 <CheckBox
                     android:id="@+id/cb_option3"
                     style="@style/MyCheckBoxStyle"
-                    android:layout_below="@id/cb_option2"
-                    />
+                    android:layout_below="@id/cb_option2" />
 
                 <ImageView
                     android:id="@+id/img_checkbox"
                     style="@style/MyImageViewStyle"
-                    android:contentDescription="@string/right_or_wrong"
-                    />
+                    android:contentDescription="@string/right_or_wrong" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -132,8 +117,7 @@
 
                 <TextView
                     android:id="@+id/written_answer_question"
-                    style="@style/MyQuestionTextViewStyle"
-                    />
+                    style="@style/MyQuestionTextViewStyle" />
 
                 <EditText
                     android:id="@+id/etxt_written_answer"
@@ -145,16 +129,15 @@
                     android:hint="@string/hint"
                     android:inputType="text"
                     android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:textColorHint="@color/colorPrimary"
-                    />
+                    android:textColorHint="@color/colorHint"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/img_etxt"
                     style="@style/MyImageViewStyle"
-                    android:contentDescription="@string/right_or_wrong"
-                    />
+                    android:contentDescription="@string/right_or_wrong" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/rel_layout_final"
                 style="@style/MyLayoutStyle"
@@ -162,8 +145,7 @@
 
                 <TextView
                     android:id="@+id/tv_final_score_text"
-                    style="@style/MyQuestionTextViewStyle"
-                    />
+                    style="@style/MyQuestionTextViewStyle" />
             </RelativeLayout>
         </RelativeLayout>
 
@@ -173,8 +155,7 @@
             android:layout_below="@id/question_container"
             android:layout_alignParentStart="true"
             android:layout_marginStart="@dimen/margin_x_large"
-            android:text="@string/submit_answer"
-            />
+            android:text="@string/submit_answer" />
 
         <Button
             android:id="@+id/btn_next_question"
@@ -182,8 +163,7 @@
             android:layout_below="@id/question_container"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/margin_x_large"
-            android:text="@string/next"
-            />
+            android:text="@string/next" />
 
         <Button
             android:id="@+id/btn_exit"
@@ -191,21 +171,19 @@
             android:layout_below="@id/question_container"
             android:layout_centerHorizontal="true"
             android:text="@string/exit"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_message"
             style="@style/MyTextViewStyle"
-            android:minLines="3"
             android:layout_below="@id/btn_submit_answer"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="@dimen/margin_x_large"
+            android:layout_marginTop="@dimen/margin_medium"
             android:layout_marginEnd="@dimen/margin_x_large"
             android:layout_marginBottom="@dimen/margin_medium"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:textSize="@dimen/text_large"
-            />
+            android:minLines="3"
+            android:textSize="@dimen/text_medium" />
     </RelativeLayout>
 </ScrollView>

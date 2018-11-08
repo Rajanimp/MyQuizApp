@@ -14,10 +14,11 @@
     <string name="final_score_zero">Oops! You have answered %1$d questions correctly and your score is %2$d/10.</string>
     <string name="single_choice_radio_button">Single Choice Radio Button</string>
 
+    <!--String array of questions and the type of questions-->
     <string-array name="questions">
         <item>Which two states in India have Chandigarh as their capital?; mcq</item>
         <item>How many nations border India?; scq</item>
-        <item>What kind of saree comes from Madhya Pradesh?; scq</item>
+        <item>What is the name of the saree that comes from Madhya Pradesh?; scq</item>
         <item>The river Ganga flows through which of the following cities -; mcq</item>
         <item>The approximate area of India in square kilometers is -; scq</item>
         <item>Which state or union territory has French as an official language - ; wrt</item>
@@ -26,6 +27,8 @@
         <item>In which of the following two sports did India bag gold in the 2018 Commonwealth games?; mcq</item>
         <item>Sanskrit is the official language of which state in India?; wrt</item>
     </string-array>
+
+    <!--String array of answers-->
     <string-array name="answers">
         <item>Bihar; Haryana; Punjab</item>
         <item>7; 14; 9</item>
@@ -39,8 +42,7 @@
         <item>Uttarakhand</item>
     </string-array>
 
-    <plurals
-        name="final_score">
+    <plurals name="final_score">
         <item quantity="one">Better luck next time! Your have answered only %1$d question correctly and your score is %2$d/10.</item>
         <item quantity="other">Congratulations! You have answered %1$d questions out of 10 correctly and your score is %2$d/10.</item>
     </plurals>

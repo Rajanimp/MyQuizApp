@@ -39,10 +39,15 @@
     <style name="MyRadioButtonStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawableLeft">@drawable/custom_radio_button</item>
+        <item name="android:drawablePadding">@dimen/margin_small</item>
         <item name="android:textSize">@dimen/text_medium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:layout_marginBottom">@dimen/margin_small</item>
+        <item name="android:checked">false</item>
     </style>
 
     <style name="MyQuestionTextViewStyle">
@@ -72,7 +77,7 @@
         <item name="android:layout_marginTop">@dimen/margin_x_large</item>
         <item name="android:layout_marginStart">@dimen/margin_x_large</item>
         <item name="android:layout_marginEnd">@dimen/margin_x_large</item>
-        <item name="android:background">@drawable/round_corner_rectangle</item>
+        <item name="android:background">@color/colorPrimary</item>
         <item name="android:padding">@dimen/margin_medium</item>
     </style>
 
